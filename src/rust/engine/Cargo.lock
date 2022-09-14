@@ -624,7 +624,7 @@ dependencies = [
  "grpc_util",
  "hashing",
  "indexmap",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "lazy_static",
  "libc",
  "log",
@@ -1039,7 +1039,7 @@ dependencies = [
  "futures",
  "http",
  "hyper",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "parking_lot",
  "prost",
  "prost-build",
@@ -1362,9 +1362,9 @@ dependencies = [
 
 [[package]]
 name = "itertools"
-version = "0.10.1"
+version = "0.10.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "69ddb889f9d0d08a67338271fa9b62996bc788c7796a5c18cf057420aaed5eaf"
+checksum = "d8bf247779e67a9082a4790b45e71ac7cfd1321331a5c856a74a9faebdab78d0"
 dependencies = [
  "either",
 ]
@@ -2181,7 +2181,7 @@ dependencies = [
  "futures",
  "grpc_util",
  "hashing",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "lazy_static",
  "libc",
  "log",
@@ -2258,7 +2258,7 @@ checksum = "62941722fb675d463659e49c4f3fe1fe792ff24fe5bbaa9c08cd3b98a1c354f5"
 dependencies = [
  "bytes",
  "heck",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "lazy_static",
  "log",
  "multimap",
@@ -2277,7 +2277,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f9cc1a3263e07e0bf68e96268f37665207b49560d98739662cdfaae215c720fe"
 dependencies = [
  "anyhow",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "proc-macro2 1.0.32",
  "quote 1.0.10",
  "syn 1.0.81",
@@ -2986,7 +2986,7 @@ dependencies = [
  "http",
  "http-body",
  "indexmap",
- "itertools 0.10.1",
+ "itertools 0.10.4",
  "lmdb",
  "log",
  "madvise",
