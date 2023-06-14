@@ -7,7 +7,7 @@ publish = false
 
 [dependencies]
 protos = { path = "../protos" }
-clap = { version = "3", features = ["derive"] }
+clap = { version = "4", features = ["derive"] }
 dirs-next = "2"
 env_logger = "0.10.0"
 fs = { path = "../fs" }
