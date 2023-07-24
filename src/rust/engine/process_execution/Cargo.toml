@@ -42,7 +42,7 @@ workunit_store = { path = "../workunit_store" }
 regex = "1"
 lazy_static = "1"
 parking_lot = "0.12"
-itertools = "0.10"
+itertools = "0.11"
 serde = "1.0.136"
 bincode = "1.3.3"
 once_cell = "1.18"
