@@ -147,7 +147,7 @@ hashing = { path = "hashing" }
 humansize = "1.1"
 indexmap = "1.9"
 internment = "0.6"
-itertools = "0.10"
+itertools = "0.11"
 lazy_static = "1"
 libc = "0.2.137"
 log = "0.4"
