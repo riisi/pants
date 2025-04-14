@@ -1041,7 +1041,7 @@ version = "2.18.0"
 dependencies = [
  "fnv",
  "hex",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "itertools",
  "protos",
  "regex",
@@ -1230,7 +1230,7 @@ dependencies = [
  "grpc_util",
  "hashing",
  "humansize",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "internment",
  "itertools",
  "libc",
@@ -1704,7 +1704,7 @@ dependencies = [
  "futures-core",
  "futures-sink",
  "http",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "slab",
  "tokio",
  "tokio-util 0.7.14",
@@ -1728,9 +1728,9 @@ dependencies = [
 
 [[package]]
 name = "hashbrown"
-version = "0.14.3"
+version = "0.15.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "290f1a1d9242c78d09ce40a5e87e7554ee637af1351968159f4952f028f75604"
+checksum = "bf151400ff0baff5465007dd2f3e717f3fe502074ca563069ce3a6629d07b289"
 
 [[package]]
 name = "hashing"
@@ -2160,12 +2160,12 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.2.3"
+version = "2.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "233cf39063f058ea2caae4091bf4a3ef70a653afbc026f5c4a4135d114e3c177"
+checksum = "cea70ddb795996207ad57735b50c5982d8844f38ba9ee5f1aedcfb708a2aa11e"
 dependencies = [
  "equivalent",
- "hashbrown 0.14.3",
+ "hashbrown 0.15.2",
  "serde",
 ]
 
@@ -3737,7 +3737,7 @@ dependencies = [
  "deepsize",
  "env_logger",
  "fnv",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "internment",
  "itertools",
  "log",
@@ -4036,7 +4036,7 @@ dependencies = [
  "chrono",
  "hex",
  "indexmap 1.9.3",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "serde",
  "serde_derive",
  "serde_json",
@@ -4049,7 +4049,7 @@ version = "0.9.34+deprecated"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6a8b1a1a2ebf674015cc02edccce75287f1a0130d394307b36743c2f5d504b47"
 dependencies = [
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "itoa",
  "ryu",
  "serde",
@@ -4193,7 +4193,7 @@ dependencies = [
  "hashing",
  "http",
  "http-body",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "itertools",
  "lmdb-rkv",
  "log",
@@ -4778,7 +4778,7 @@ version = "0.0.1"
 dependencies = [
  "console",
  "futures",
- "indexmap 2.2.3",
+ "indexmap 2.9.0",
  "indicatif",
  "logging",
  "parking_lot 0.12.3",
