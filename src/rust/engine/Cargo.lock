@@ -492,7 +492,7 @@ name = "brfs"
 version = "0.0.1"
 dependencies = [
  "bytes",
- "clap 4.5.32",
+ "clap 4.5.36",
  "dirs-next",
  "env_logger",
  "errno",
@@ -706,9 +706,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.5.32"
+version = "4.5.36"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6088f3ae8c3608d19260cd7445411865a485688711b78b5be70d78cd96136f83"
+checksum = "2df961d8c8a0d08aa9945718ccf584145eee3f3aa06cddbeac12933781102e04"
 dependencies = [
  "clap_builder",
  "clap_derive",
@@ -716,9 +716,9 @@ dependencies = [
 
 [[package]]
 name = "clap_builder"
-version = "4.5.32"
+version = "4.5.36"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "22a7ef7f676155edfb82daa97f99441f3ebf4a58d5e32f295a56259f1b6facc8"
+checksum = "132dbda40fb6753878316a489d5a1242a8ef2f0d9e47ba01c951ea8aa7d013a5"
 dependencies = [
  "anstream",
  "anstyle",
@@ -801,7 +801,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "117725a109d387c937a1533ce01b450cbde6b88abceea8473c4d7a85853cda3c"
 dependencies = [
  "lazy_static",
- "windows-sys 0.52.0",
+ "windows-sys 0.48.0",
 ]
 
 [[package]]
@@ -1417,7 +1417,7 @@ name = "fs_util"
 version = "0.0.1"
 dependencies = [
  "bytes",
- "clap 4.5.32",
+ "clap 4.5.36",
  "env_logger",
  "fs",
  "futures",
@@ -2339,7 +2339,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0c2a198fb6b0eada2a8df47933734e6d35d350665a33a3593d7164fa52c75c19"
 dependencies = [
  "cfg-if 1.0.0",
- "windows-targets 0.52.5",
+ "windows-targets 0.48.0",
 ]
 
 [[package]]
@@ -2400,7 +2400,7 @@ dependencies = [
 name = "local_cas"
 version = "0.0.1"
 dependencies = [
- "clap 4.5.32",
+ "clap 4.5.36",
  "env_logger",
  "mock",
  "tokio",
@@ -2410,7 +2410,7 @@ dependencies = [
 name = "local_execution_server"
 version = "0.1.0"
 dependencies = [
- "clap 4.5.32",
+ "clap 4.5.36",
  "mock",
  "protos",
  "tokio",
@@ -3146,7 +3146,7 @@ dependencies = [
 name = "process_executor"
 version = "0.0.1"
 dependencies = [
- "clap 4.5.32",
+ "clap 4.5.36",
  "dirs-next",
  "env_logger",
  "fs",
@@ -4181,7 +4181,7 @@ dependencies = [
  "async-stream",
  "async-trait",
  "bytes",
- "clap 4.5.32",
+ "clap 4.5.36",
  "concrete_time",
  "criterion",
  "deepsize",
