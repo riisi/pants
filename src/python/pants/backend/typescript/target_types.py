@@ -150,3 +150,12 @@ class TypeScriptTestsGeneratorTarget(TargetFilesGenerator):
         TypeScriptTestBatchCompatibilityTagField,
     )
     help = "Generate a `typescript_test` target for each file in the `sources` field."
+
+from pants.engine.rules import collect_rules
+from pants.backend.typescript.goals.check import rules as check_rules
+
+def rules():
+    return [
+        *collect_rules(),
+        *check_rules(),
+    ]
