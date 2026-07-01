@@ -39,7 +39,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Install Protoc
@@ -50,7 +50,7 @@ jobs:
     - name: Set rustup profile
       run: rustup set profile default
     - name: Cache Rust toolchain
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: Linux-ARM64-rustup-${{ hashFiles('src/rust/rust-toolchain') }}-v2
         path: |
@@ -68,7 +68,7 @@ jobs:
       run: echo "hash=$(./build-support/bin/rust/print_engine_hash.sh)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Cache native engine
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: Linux-ARM64-engine-${{ steps.get-engine-hash.outputs.hash }}-v1
         path: |-
@@ -94,13 +94,13 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-bootstrap-Linux-ARM64
         overwrite: 'true'
         path: .pants.d/workdir/*.log
     - name: Upload native binaries
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-ARM64
         path: |-
@@ -136,7 +136,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Set up Python 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14
@@ -159,7 +159,7 @@ jobs:
     - name: Set rustup profile
       run: rustup set profile default
     - name: Cache Rust toolchain
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: Linux-x86_64-rustup-${{ hashFiles('src/rust/rust-toolchain') }}-v2
         path: |
@@ -177,7 +177,7 @@ jobs:
       run: echo "hash=$(./build-support/bin/rust/print_engine_hash.sh)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Cache native engine
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: Linux-x86_64-engine-${{ steps.get-engine-hash.outputs.hash }}-v1
         path: |-
@@ -203,13 +203,13 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-bootstrap-Linux-x86_64
         overwrite: 'true'
         path: .pants.d/workdir/*.log
     - name: Upload native binaries
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: |-
@@ -254,7 +254,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Set up Python 3.9, 3.10, 3.11, 3.12, 3.13, 3.14
@@ -275,7 +275,7 @@ jobs:
     - name: Set rustup profile
       run: rustup set profile default
     - name: Cache Rust toolchain
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: macOS14-ARM64-rustup-${{ hashFiles('src/rust/rust-toolchain') }}-v2
         path: |
@@ -293,7 +293,7 @@ jobs:
       run: echo "hash=$(./build-support/bin/rust/print_engine_hash.sh)" >> $GITHUB_OUTPUT
       shell: bash
     - name: Cache native engine
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: macOS14-ARM64-engine-${{ steps.get-engine-hash.outputs.hash }}-v1
         path: |-
@@ -319,13 +319,13 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-bootstrap-macOS14-ARM64
         overwrite: 'true'
         path: .pants.d/workdir/*.log
     - name: Upload native binaries
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: native_binaries.${{ matrix.python-version }}.macOS14-ARM64
         path: |-
@@ -371,7 +371,7 @@ jobs:
         rm -rf /mnt/host-root/usr/local/.ghcup || true
         df -h
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Configure Git
@@ -415,7 +415,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-wheels-and-pex-Linux-ARM64
         overwrite: 'true'
@@ -451,7 +451,7 @@ jobs:
         rm -rf /mnt/host-root/usr/local/.ghcup || true
         df -h
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Configure Git
@@ -505,7 +505,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-wheels-and-pex-Linux-x86_64
         overwrite: 'true'
@@ -539,7 +539,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Set up Python 3.9, 3.10, 3.11, 3.12, 3.13, 3.14
@@ -560,7 +560,7 @@ jobs:
     - name: Set rustup profile
       run: rustup set profile default
     - name: Cache Rust toolchain
-      uses: actions/cache@v5
+      uses: actions/cache@v6.1.0
       with:
         key: macOS14-ARM64-rustup-${{ hashFiles('src/rust/rust-toolchain') }}-v2
         path: |
@@ -605,7 +605,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-wheels-and-pex-macOS14-ARM64
         overwrite: 'true'
@@ -620,17 +620,17 @@ jobs:
     - windows-2025
     steps:
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Install MSYS2
-      uses: msys2/setup-msys2@4f806de0a5a7294ffabaff804b38a9b435a73bda
+      uses: msys2/setup-msys2@66cd2cce69caa17b53920067426061ca1de3a884
       with:
         install: base-devel mingw-w64-ucrt-x86_64-toolchain mingw-w64-ucrt-x86_64-nasm mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-protobuf
         msystem: UCRT64
         update: true
     - name: Set Up Rust Toolchain
-      uses: actions-rust-lang/setup-rust-toolchain@v1
+      uses: actions-rust-lang/setup-rust-toolchain@v1.16.1
       with:
         rust-src-dir: src/rust
         target: x86_64-pc-windows-gnu
@@ -690,7 +690,7 @@ jobs:
     - depot-ubuntu-22.04
     steps:
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - id: classify
@@ -746,7 +746,7 @@ jobs:
     - depot-ubuntu-22.04
     steps:
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -787,7 +787,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -802,7 +802,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-lint-Linux-x86_64
         overwrite: 'true'
@@ -886,7 +886,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Install AdoptJDK
@@ -905,7 +905,7 @@ jobs:
         cache: false
         go-version: 1.24.9
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-ARM64
         path: src/python/pants
@@ -932,7 +932,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-Linux-ARM64
         overwrite: 'true'
@@ -971,7 +971,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1034,7 +1034,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1061,7 +1061,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-0_10-Linux-x86_64
         overwrite: 'true'
@@ -1100,7 +1100,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1163,7 +1163,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1190,7 +1190,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-1_10-Linux-x86_64
         overwrite: 'true'
@@ -1229,7 +1229,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1292,7 +1292,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1319,7 +1319,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-2_10-Linux-x86_64
         overwrite: 'true'
@@ -1358,7 +1358,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1421,7 +1421,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1448,7 +1448,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-3_10-Linux-x86_64
         overwrite: 'true'
@@ -1487,7 +1487,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1550,7 +1550,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1577,7 +1577,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-4_10-Linux-x86_64
         overwrite: 'true'
@@ -1616,7 +1616,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1679,7 +1679,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1706,7 +1706,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-5_10-Linux-x86_64
         overwrite: 'true'
@@ -1745,7 +1745,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1808,7 +1808,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1835,7 +1835,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-6_10-Linux-x86_64
         overwrite: 'true'
@@ -1874,7 +1874,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -1937,7 +1937,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -1964,7 +1964,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-7_10-Linux-x86_64
         overwrite: 'true'
@@ -2003,7 +2003,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -2066,7 +2066,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -2093,7 +2093,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-8_10-Linux-x86_64
         overwrite: 'true'
@@ -2132,7 +2132,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - env:
@@ -2195,7 +2195,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.Linux-x86_64
         path: src/python/pants
@@ -2222,7 +2222,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-9_10-Linux-x86_64
         overwrite: 'true'
@@ -2262,7 +2262,7 @@ jobs:
         swap-storage: false
         tool-cache: false
     - name: Check out code
-      uses: actions/checkout@v6
+      uses: actions/checkout@v7
       with:
         fetch-depth: 10
     - name: Install AdoptJDK
@@ -2291,7 +2291,7 @@ jobs:
           3.13
           3.14
     - name: Download native binaries
-      uses: actions/download-artifact@v7
+      uses: actions/download-artifact@v8
       with:
         name: native_binaries.${{ matrix.python-version }}.macOS14-ARM64
         path: src/python/pants
@@ -2318,7 +2318,7 @@ jobs:
     - continue-on-error: true
       if: always()
       name: Upload pants.log
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       with:
         name: logs-python-test-macOS14-ARM64
         overwrite: 'true'
